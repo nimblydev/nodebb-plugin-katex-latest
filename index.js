@@ -6,7 +6,6 @@
 	'use strict';
 
 	var winston = module.parent.require('winston');
-	var plugins = module.parent.require('./plugins');
 	var katex = require("./katex/katex.js");
 
 	/**
@@ -37,8 +36,8 @@
 			callback(null, data);
 		},
 
-		parseRaw: function(raw, callback) {
-			winston.info("nodebb-plugin-latex parseRaw()");
+		renderRaw: function(raw, callback) {
+			winston.debug(`nodebb-plugin-latex parseRaw()`);
 			callback(null, renderLatex(raw));
 		},
 	};
