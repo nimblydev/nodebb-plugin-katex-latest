@@ -1,0 +1,16 @@
+# System trash files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+*~
+
+# Archives
+**/*.zip
+**/*.log
+
+# Node modules
+**/node_modules/
+

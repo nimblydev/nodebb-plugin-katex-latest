@@ -1,0 +1,23 @@
+{
+  "name": "nodebb-plugin-katex-latest",
+  "version": "0.1.1",
+  "description": "Add inline LaTeX expressions support via Katex into NodeBB",
+  "main": "library.js",
+  "nbbpm": {
+    "compatibility": "^1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zipang/nodebb-plugin-katex-latest.git"
+  },
+  "keywords": ["LaTeX", "nodebb", "plugin"],
+  "author": "zipang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zipang/nodebb-plugin-katex-latest.git/issues"
+  },
+  "homepage": "https://github.com/zipang/nodebb-plugin-katex-latest.git#readme"
+}

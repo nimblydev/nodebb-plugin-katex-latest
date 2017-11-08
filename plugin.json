@@ -1,0 +1,20 @@
+{
+	"id": "nodebb-plugin-latex",
+	"name": "LaTeX expressions support for NodeBB",
+	"description": "Add inline LaTeX expressions support via Katex",
+	"url": "https://github.com/zipang/nodebb-plugin-latex.git",
+	"library": "./index.js",
+	"hooks": [
+		{
+			"hook": "filter:parse.post",
+			"method": "renderPost"
+		},
+		{
+			"hook": "filter:parse.raw",
+			"method": "renderRaw"
+		}
+	],
+	"less": [
+		"katex/katex.less"
+	]
+}
