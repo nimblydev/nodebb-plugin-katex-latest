@@ -1,6 +1,6 @@
 /*
  * LaTeX NodeBB Plugin
- * Add support of inline LaTeX expressions with katex
+ * Add support of inline LaTeX expressions inside posts with katex
  */
 (function() {
 	'use strict';
@@ -9,20 +9,21 @@
 	var katex = require("./katex/katex.js");
 
 	/**
-	 * Render inline LaTeX expressions (`$expr$`) with Katex
-	 * @param {*} text
+	 * Render inline LaTeX expressions : `$expr$` with Katex
+	 * @param {string} html
+	 * @returns the modified html content with
 	 */
-	function renderLatex(text) {
+	function renderLatex(html) {
 
-		if (!text || typeof text !== "string") return '';
+		if (!html || typeof html !== "string") return '';
 
-		return text.replace(/\$(\S[^\$\n\r]*)\$/g, function(expr, match) {
+		return html.replace(/\$(\S[^\$\n\r]*)\$/g, function(expr, match) {
 
 			try {
 				return katex.renderToString(match);
 			} catch (err) {
-				//winston.error(err);
-				return "<span style='color: red'>" + expr + "</span>";
+				// signal the parse error with a red color instead of inside the log
+				return "<span title='Syntax error in math expression' style='color: red'>" + expr + "</span>";
 			}
 		});
 	}
@@ -37,7 +38,6 @@
 		},
 
 		renderRaw: function(raw, callback) {
-			winston.debug(`nodebb-plugin-latex parseRaw()`);
 			callback(null, renderLatex(raw));
 		},
 	};
