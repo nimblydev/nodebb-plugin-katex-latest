@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-katex-latest",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Add inline LaTeX expressions support via Katex into NodeBB",
   "main": "library.js",
   "nbbpm": {
